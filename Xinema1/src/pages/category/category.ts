@@ -1,0 +1,30 @@
+import { Categories } from './../../providers/categories';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the Category page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+@IonicPage()
+@Component({
+  selector: 'page-category',
+  templateUrl: 'category.html',
+})
+export class Category {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public cat:Categories) {
+
+    cat.categories;
+    console.log(cat.categories);
+
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad Category');
+
+  }
+
+}
