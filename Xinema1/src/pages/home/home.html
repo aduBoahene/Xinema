@@ -4,15 +4,15 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
-    
+
     <ion-buttons end>
-      <button  ion-button icon-only>
-        <ion-icon name="md-search"></ion-icon>
+      <button ion-button icon-only (click)="displaySearch()">
+        <ion-icon name="md-search" ></ion-icon>
       </button>
     </ion-buttons>
 
     <ion-buttons end>
-      <button  ion-button icon-only (click)="goToCategory()">
+      <button ion-button icon-only (click)="goToCategory()">
         <ion-icon name="md-briefcase"></ion-icon>
       </button>
     </ion-buttons>
@@ -21,6 +21,11 @@
 </ion-header>
 
 <ion-content>
+
+  <!--search bar-->
+  <!--end search bar-->
+
+
   <div>
     <ion-segment [(ngModel)]="cat">
       <ion-segment-button value="men">
@@ -37,35 +42,26 @@
       <ion-item>
         <ion-grid>
           <ion-row>
-            <ion-col *ngFor="let movie of movies" col-4>
+            <ion-col *ngFor="let movie of movies" col-4 (click)="goToMovieDetail(movie)">
               <img src="{{movie.VideoUrl}}" />
             </ion-col>
           </ion-row>
         </ion-grid>
       </ion-item>
     </ion-list>
-  
+
 
 
 
     <ion-list *ngSwitchCase="'women'">
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="img/women-image1.png">
-        </ion-thumbnail>
-        <h2>Cothing</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="img/women-image1.png">
-        </ion-thumbnail>
-        <h2>Watches</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="/img/women-image1.png">
-        </ion-thumbnail>
-        <h2>Footwear</h2>
+     <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let movie of movies" col-4>
+              <img src="{{movie.VideoUrl}}" />
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-item>
     </ion-list>
   </div>

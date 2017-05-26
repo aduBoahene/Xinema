@@ -1,3 +1,5 @@
+import { MovieDetail } from './../movie-detail/movie-detail';
+import { Search } from './../search/search';
 import { Category } from './../category/category';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -10,6 +12,7 @@ export class HomePage {
   movies:any;
   cat: string = "men"; // default button
   search:boolean;
+  newMovies:any;
 
   constructor(public navCtrl: NavController) {
     
@@ -33,7 +36,7 @@ export class HomePage {
       },
        {
         title:"jacob",
-        Genre:"Action",
+        Genre:"Drama",
         Cast:[],
         ReleaseDate:"2017-05-12",
         summary:"",
@@ -65,7 +68,7 @@ export class HomePage {
       },
        {
         title:"sin city",
-        Genre:"Action",
+        Genre:"Drama",
         Cast:[],
         ReleaseDate:"2017-05-12",
         summary:"",
@@ -73,7 +76,7 @@ export class HomePage {
       },
        {
         title:"Snow white ",
-        Genre:"Action",
+        Genre:"Drama",
         Cast:[],
         ReleaseDate:"2017-05-12",
         summary:"",
@@ -105,7 +108,7 @@ export class HomePage {
       },
        {
         title:"welcome to crystal lake",
-        Genre:"Action",
+        Genre:"Drama",
         Cast:[],
         ReleaseDate:"2017-05-12",
         summary:"",
@@ -124,21 +127,31 @@ export class HomePage {
 
     ];
   
+   this.filtered();
 
-  }
+ 
+
+ }
 
   goToCategory(){
     this.navCtrl.push(Category);
   }
 
   displaySearch(){
-    if( this.search==true){
-      this.search=true;
-    }else{
-       this.search=false;
-    }
-    
+   this.navCtrl.push(Search);
   }
+
+  filtered(){
+    return this.movies.filter(item => {
+      this.movies.Genre=="Drama"
+      item=this.newMovies;
+      console.log(this.newMovies);
+    });
+  }
+
+goToMovieDetail(movie){
+  this.navCtrl.push(MovieDetail,{"movie":movie});
+}
 
 
 

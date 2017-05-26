@@ -1,4 +1,3 @@
-import { Categories } from './../../providers/categories';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -14,11 +13,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'category.html',
 })
 export class Category {
+  categories:Array<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public cat:Categories) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-    cat.categories;
-    console.log(cat.categories);
+     this.categories = [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Coming Soon",
+      "Crime",
+      "Drama",
+      "Ghana Coming Soon",
+      "Horror",
+      "Nigeria Coming Soon",
+      "Nollywood",
+      "Now Showing",
+      "Romance",
+      "Sci-Fi",
+      "Thriller"
+      ];
 
   }
 

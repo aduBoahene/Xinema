@@ -1,3 +1,6 @@
+import { Video } from './../pages/video/video';
+import { MovieDetail } from './../pages/movie-detail/movie-detail';
+import { Search } from './../pages/search/search';
 import { Http } from '@angular/http';
 import { Categories } from './../providers/categories';
 import { Schedule } from './../pages/schedule/schedule';
@@ -8,6 +11,7 @@ import { Movies } from './../providers/movies';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { VideoPlayer } from '@ionic-native/video-player'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -25,7 +29,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Category,
     Promo,
     Favorites,
-    Schedule
+    Schedule,
+    Search,
+    MovieDetail,
+    Video
   ],
   imports: [
     BrowserModule,
@@ -40,14 +47,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Category,
     Promo,
     Favorites,
-    Schedule
+    Schedule,
+    Search,
+    MovieDetail,
+    Video
   ],
   providers: [
     Categories,
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-
+    VideoPlayer
 
   ]
 })
